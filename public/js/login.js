@@ -16,8 +16,8 @@ $(document).ready(() => {
       return;
     }
 
-    // If we have an email and password we run the loginUser function and clear the form
-      // eslint-disable-next-line no-use-before-define
+    // If we have an email and password we run the loginUser function and clear the for
+    // eslint-disable-next-line no-use-before-define
     loginUser(userData.email, userData.password);
     emailInput.val('');
     passwordInput.val('');
