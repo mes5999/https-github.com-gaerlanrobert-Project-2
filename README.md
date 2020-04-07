@@ -20,12 +20,12 @@ As a coding bootcamp student I want to be able to talk about the Corona Virus in
   * Node
   
 #### Technologies used
-  * Express Web Server
-  * MySQL Database
-  * Sequelize ORM
+  * [Express](https://expressjs.com/) Web Server
+  * [MySQL](https://www.mysql.com/) Database
+  * [Sequelize](https://sequelize.org/) ORM
   * [Heroku](https://heroku.com)
   * [Socket.io](https://socket.io/)
-  * [Skeleton responsive framework](http://getskeleton.com/) (possibly)
+  * [Skeleton](http://getskeleton.com/) responsive framework (possibly)
   * ESLint
 
 #### Breakdown of tasks and roles
