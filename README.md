@@ -31,6 +31,7 @@ As a coding bootcamp student I want to be able to talk about the Corona Virus in
   * [News API](https://newsapi.org/)
 
 #### Breakdown of tasks and roles
+  * Wireframe/Mockup - Everyone
   * Authentication
   * Routes (Get/Post)
   * MySQL schema / DB design - Identify tables and relationships
