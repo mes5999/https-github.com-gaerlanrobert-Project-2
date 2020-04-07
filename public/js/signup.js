@@ -12,6 +12,25 @@ $(document).ready(() => {
       password: passwordInput.val().trim(),
     };
 
+    function handleLoginErr(err) {
+      $('#alert .msg').text(err.responseJSON);
+      $('#alert').fadeIn(500);
+    }
+
+    // Does a post to the signup route. If successful, we are redirected to the members page
+    // Otherwise we log any errors
+    function signUpUser(email, password) {
+      $.post('/api/signup', {
+        email,
+        password,
+      })
+        .then(() => {
+          window.location.replace('/members');
+          // If there's an error, handle it by throwing up a bootstrap alert
+        })
+        .catch(handleLoginErr);
+    }
+
     if (!userData.email || !userData.password) {
       return;
     }
@@ -20,23 +39,4 @@ $(document).ready(() => {
     emailInput.val('');
     passwordInput.val('');
   });
-
-  function handleLoginErr(err) {
-    $('#alert .msg').text(err.responseJSON);
-    $('#alert').fadeIn(500);
-  }
-
-  // Does a post to the signup route. If successful, we are redirected to the members page
-  // Otherwise we log any errors
-  function signUpUser(email, password) {
-    $.post('/api/signup', {
-      email,
-      password,
-    })
-      .then((data) => {
-        window.location.replace('/members');
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  }
 });
