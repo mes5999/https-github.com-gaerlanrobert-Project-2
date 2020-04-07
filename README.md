@@ -35,6 +35,7 @@ As a coding bootcamp student I want to be able to talk about the Corona Virus in
   * Routes (Get/Post)
   * MySQL schema / DB design - Identify tables and relationships
   * MySQL Heroku Deployment
+  * Web app Heroku Deployment
   * Sequelize ORM schema 
   * Sequelize ORM seed jobs 
   * Express handlebars - Aleksei
