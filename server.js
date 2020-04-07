@@ -1,11 +1,16 @@
 // Requiring necessary npm packages
+// eslint-disable-next-line no-undef
 const express = require('express');
+// eslint-disable-next-line no-undef
 const session = require('express-session');
 // Requiring passport as we've configured it
+// eslint-disable-next-line no-undef
 const passport = require('./config/passport');
 
 // Setting up port and requiring models for syncing
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 8080;
+// eslint-disable-next-line no-undef
 const db = require('./models');
 
 // Creating express app and configuring middleware needed for authentication

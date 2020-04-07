@@ -1,6 +1,9 @@
+// eslint-disable-next-line no-undef
 const passport = require('passport');
+// eslint-disable-next-line no-undef
 const LocalStrategy = require('passport-local').Strategy;
 
+// eslint-disable-next-line no-undef
 const db = require('../models');
 
 // Telling passport we want to use a Local Strategy. In other words,
