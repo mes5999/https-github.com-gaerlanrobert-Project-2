@@ -32,7 +32,7 @@ As a coding bootcamp student I want to be able to talk about the Corona Virus in
 
 #### Breakdown of tasks and roles
   * Wireframe/Mockup - Everyone
-  * Authentication
+  * Authentication - Robert
   * Routes (Get/Post)
   * MySQL schema / DB design - Identify tables and relationships
   * MySQL Heroku Deployment
@@ -44,9 +44,9 @@ As a coding bootcamp student I want to be able to talk about the Corona Virus in
   * API routes
   * Stylesheets - Aleksei
   * Login page (html)
-  * Main page (html)
-  * socket.io
-  * News API
+  * Main page (html) - Robert
+  * socket.io - Robert
+  * News API - Robert
 
 #### Challenges
 
