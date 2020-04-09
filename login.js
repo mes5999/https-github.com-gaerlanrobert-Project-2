@@ -1,7 +1,7 @@
-function submit(){
-    console.log("submitting info...")
-    var username = $("#usernameInput").val();
-    var password = $("#passwordInput").val();
-    console.log("username: " + username);
-    console.log("password: " + password);
-}
+// function submit() {
+//     console.log('submitting info...');
+//     const username = $('#usernameInput').val();
+//     const password = $('#passwordInput').val();
+//     console.log(`username: ${username}`);
+//     console.log(`password: ${password}`);
+// }
