@@ -1,6 +1,13 @@
 // Requiring our models and passport as we've configured it
+// eslint-disable-next-line import/extensions
+// import { topic } from '../news.js';
+
 const db = require('../models');
 const passport = require('../config/passport');
+const news = require('../news');
+
+
+// import news from 'news';
 
 module.exports = (app) => {
     // Using the passport.authenticate middleware with our local strategy.
@@ -51,5 +58,10 @@ module.exports = (app) => {
                 id: req.user.id,
             });
         }
+    });
+
+    app.get('/api/news/:topic', (req, res) => {
+        console.log(req.params.topic);
+        res.send(news.topic(('acef062b396a4219a8e009b9395a424d', 'US', req.params.topic, 'popularity', '2020-04-07')));
     });
 };
