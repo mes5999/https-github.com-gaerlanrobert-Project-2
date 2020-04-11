@@ -14,7 +14,7 @@ Chat app provides space for users to talk about current events (Covid-19 and oth
   * CoronaVirus
 
 #### User story
-As a coding bootcamp student I want to be able to talk about the Corona Virus in a safe web chat app. 
+AS A person interested in current events, I WANT to be able to talk about current events in a safe web chat app SO THAT I can stay informed while being able to start or join a conversation. 
 
 ## _Process:_
   * Node
