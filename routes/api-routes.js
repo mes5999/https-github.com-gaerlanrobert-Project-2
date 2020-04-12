@@ -4,8 +4,6 @@
 
 const db = require('../models');
 const passport = require('../config/passport');
-const news = require('../news');
-
 
 // import news from 'news';
 
@@ -60,13 +58,4 @@ module.exports = (app) => {
         }
     });
 
-    app.get('/api/news/:topic', (req, res) => {
-        console.log(req.params.topic);
-        const promise = news.topic('acef062b396a4219a8e009b9395a424d', 'US', req.params.topic, 'popularity');
-
-        promise.then((data) => {
-            console.log(data);
-            res.send(data);
-        });
-    });
 };
