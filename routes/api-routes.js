@@ -62,6 +62,11 @@ module.exports = (app) => {
 
     app.get('/api/news/:topic', (req, res) => {
         console.log(req.params.topic);
-        res.send(news.topic(('acef062b396a4219a8e009b9395a424d', 'US', req.params.topic, 'popularity', '2020-04-07')));
+        const promise = news.topic('acef062b396a4219a8e009b9395a424d', 'US', req.params.topic, 'popularity');
+
+        promise.then((data) => {
+            console.log(data);
+            res.send(data);
+        });
     });
 };
