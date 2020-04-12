@@ -30,7 +30,7 @@ module.exports = (app) => {
         news.topic('coronavirus')
             .then((data) => {
                 const hbsObject = {
-                    articles: data,
+                    articles: data.splice(0, 5),
                 };
                 console.log(hbsObject);
                 res.render('index', hbsObject);
