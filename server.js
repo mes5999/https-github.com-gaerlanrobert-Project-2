@@ -4,7 +4,7 @@ const express = require('express');
 // eslint-disable-next-line no-undef
 const session = require('express-session');
 // Requiring passport as we've configured it
-// eslint-disable-next-line no-undef
+const exphbs = require('express-handlebars');
 const passport = require('./config/passport');
 // Setting up port and requiring models for syncing
 // eslint-disable-next-line no-undef
@@ -21,6 +21,10 @@ app.use(express.static('public'));
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set Handlebars.
+app.engine('handlebars', exphbs({ defaultLayout: 'members' }));
+app.set('view engine', 'handlebars');
 
 // Requiring our routes
 require('./routes/html-routes')(app);
