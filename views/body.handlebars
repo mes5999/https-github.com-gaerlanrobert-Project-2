@@ -8,12 +8,23 @@
     </div>
 
     <div class="row">
-        <ul>
-            {{#each articles}}
-                {{> articles/article-block}}
-            {{/each}}
-        </ul>
+
+        <div class="card">
+            <h4 class="card-header">Let's give them something to talk about</h4>
+            <div class="card-body">
+                <div class="text-center">
+                    {{#each articles}}
+                        {{> articles/article-block}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-body">
+        </div>
     </div>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
