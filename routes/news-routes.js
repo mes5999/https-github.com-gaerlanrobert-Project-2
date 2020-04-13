@@ -26,7 +26,7 @@ module.exports = (app) => {
                 const hbsObject = {
                     articles: array,
                 };
-                res.render('html-body', hbsObject);
+                res.render('body', hbsObject);
             })
             .catch((error) => {
                 console.log(error);
