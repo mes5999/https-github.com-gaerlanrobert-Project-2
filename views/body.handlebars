@@ -9,19 +9,30 @@
 
     <div class="row">
 
-        <div class="card">
-            <h4 class="card-header">Let's give them something to talk about</h4>
-            <div class="card-body">
-                <div class="text-center">
-                    {{#each articles}}
-                        {{> articles/article-block}}
-                    {{/each}}
+        <div class="col-12">
+
+            <div class="card mb-4">
+                <h6 class="card-header"><strong>Let's give them something to talk about</strong></h6>
+                <div class="card-body">
+                    <div class="text-center" id="articles">
+                        {{#each articles}}
+                            {{> articles/article-block}}
+                        {{/each}}
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <span class="list-group-item">{{title}} - <a href={{url}} target="_blank" rel="noopener noreferrer">{{source}}</a></span>
+            <br>
 
-        <div class="card-body">
+            <div class="card mb-4">
+                <h6 class="card-header"><strong>News Search</strong></h6>
+                <div class="card-body">
+                    <input type="text" id="news-search" class="form-control">
+                    <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span>News Search</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -30,3 +41,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/news.js"></script>
+<script type="text/javascript">
+    $("#search-btn").on("click", function() {
+        const newsSearch = $("#news-search").val().trim();
+        $.get(`/api/news/${newsSearch}`, (data) => {
+            console.log(data);
+            console.log(data.length);
+            let button = $("<button>");
+            let articles = $("#articles");
+
+            button.text(data);
+            articles.empty();
+            articles.append(button);
+        });
+    });
+
+</script>
