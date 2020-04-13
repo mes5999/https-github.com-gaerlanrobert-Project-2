@@ -44,6 +44,10 @@ module.exports = (app) => {
                     articles: array,
                 };
                 res.render('index', hbsObject);
+            })
+            .catch((error) => {
+                console.log(error);
+                res.send(error);
             });
     });
 };
