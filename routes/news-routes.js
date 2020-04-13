@@ -8,4 +8,25 @@ module.exports = (app) => {
                 res.send(data);
             });
     });
+
+    app.get('/news-test', (req, res) => {
+        news.topic('coronavirus')
+            .then((data) => {
+                const array = [];
+                // eslint-disable-next-line no-restricted-syntax
+                for (const article of data.splice(0, 5)) {
+                    array.push({
+                        title: article.title.split('-')[0],
+                        source: article.source.name,
+                        url: article.url,
+                        urlToImage: article.urlToImage,
+                    });
+                }
+                const hbsObject = {
+                    articles: array,
+                };
+                console.log(hbsObject);
+                res.render('index', hbsObject);
+            });
+    });
 };
