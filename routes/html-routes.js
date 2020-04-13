@@ -27,27 +27,29 @@ module.exports = (app) => {
     // If a user who is not logged in tries to access this route
     // they will be redirected to the signup page
     app.get('/members', isAuthenticated, (req, res) => {
-        news.topic('coronavirus')
-            .then((data) => {
-                const { articles } = data; //  status, totalResults, articles
-                const array = [];
-                // eslint-disable-next-line no-restricted-syntax
-                for (const article of articles.splice(0, 5)) {
-                    array.push({
-                        title: article.title.split('-')[0],
-                        source: article.source.name,
-                        url: article.url,
-                        urlToImage: article.urlToImage,
-                    });
-                }
-                const hbsObject = {
-                    articles: array,
-                };
-                res.render('body', hbsObject);
-            })
-            .catch((error) => {
-                console.log(error);
-                res.send(error);
-            });
+        res.sendFile(path.join(__dirname, '../public/members.html'));
     });
 };
+
+// news.topic('coronavirus')
+//     .then((data) => {
+//         const { articles } = data; //  status, totalResults, articles
+//         const array = [];
+//         // eslint-disable-next-line no-restricted-syntax
+//         for (const article of articles.splice(0, 5)) {
+//             array.push({
+//                 title: article.title.split('-')[0],
+//                 source: article.source.name,
+//                 url: article.url,
+//                 urlToImage: article.urlToImage,
+//             });
+//         }
+//         const hbsObject = {
+//             articles: array,
+//         };
+//         res.render('body', hbsObject);
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//         res.send(error);
+//     });
