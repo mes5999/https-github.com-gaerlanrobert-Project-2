@@ -8,8 +8,7 @@ module.exports = {
         const from = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
         const url = `http://newsapi.org/v2/top-headlines?apiKey=${apiKey}&country=${country}&q=${topic}&sortBy=popularity&from=${from}`;
         const response = await fetch(url);
-        const { articles } = await response.json(); //  status, totalResults, articles
-        return articles;
+        return response.json();
     },
 };
 

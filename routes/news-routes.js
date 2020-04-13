@@ -12,9 +12,10 @@ module.exports = (app) => {
     app.get('/news-test', (req, res) => {
         news.topic('coronavirus')
             .then((data) => {
+                const { articles } = data; //  status, totalResults, articles
                 const array = [];
                 // eslint-disable-next-line no-restricted-syntax
-                for (const article of data.splice(0, 5)) {
+                for (const article of articles.splice(0, 5)) {
                     array.push({
                         title: article.title.split('-')[0],
                         source: article.source.name,
@@ -25,7 +26,6 @@ module.exports = (app) => {
                 const hbsObject = {
                     articles: array,
                 };
-                console.log(hbsObject);
                 res.render('index', hbsObject);
             });
     });

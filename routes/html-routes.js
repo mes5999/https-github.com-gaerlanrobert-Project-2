@@ -29,20 +29,20 @@ module.exports = (app) => {
     app.get('/members', isAuthenticated, (req, res) => {
         news.topic('coronavirus')
             .then((data) => {
+                const { articles } = data; //  status, totalResults, articles
                 const array = [];
                 // eslint-disable-next-line no-restricted-syntax
-                for (const article of data.splice(0, 5)) {
-                    const element = {};
-                    element.title = article.title.split('-')[0];
-                    element.source = article.source.name;
-                    element.url = article.url;
-                    element.urlToImage = article.urlToImage;
-                    array.push(element);
+                for (const article of articles.splice(0, 5)) {
+                    array.push({
+                        title: article.title.split('-')[0],
+                        source: article.source.name,
+                        url: article.url,
+                        urlToImage: article.urlToImage,
+                    });
                 }
                 const hbsObject = {
                     articles: array,
                 };
-                console.log(hbsObject);
                 res.render('index', hbsObject);
             });
     });
