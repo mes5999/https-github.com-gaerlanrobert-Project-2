@@ -134,30 +134,3 @@ form button {
 #messages {
   margin-bottom: 40px;
 }
-
-
-form.signup,
-form.login {
-  margin-top: 50px;
-}
-
-
-.welcome{
-  text-align:center;
-}
-
-.container{
-  margin-top: 5%;
-}
-
-.login{
-  text-align:center;
-}
-
-.login-form{
-  text-align: center;
-}
-
-.sign-up{
-  text-align: center;
-}
