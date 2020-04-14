@@ -33,7 +33,7 @@ app.set('view engine', 'handlebars');
 
 // Requiring our routes
 require('./routes/html-routes')(app);
-require('./routes/api-routes')(app, io);
+require('./routes/api-routes')(app, io, http);
 require('./routes/news-routes')(app);
 
 // Syncing our database and logging a message to the user upon success

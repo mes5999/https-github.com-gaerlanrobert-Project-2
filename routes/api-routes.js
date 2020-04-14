@@ -7,7 +7,7 @@ const passport = require('../config/passport');
 
 // import news from 'news';
 
-module.exports = (app, io) => {
+module.exports = (app, io, http) => {
     // Using the passport.authenticate middleware with our local strategy.
     // If the user has valid login credentials, send them to the members page.
     // Otherwise the user will be sent an error
@@ -63,5 +63,9 @@ module.exports = (app, io) => {
             console.log(`msg: ${msg}`);
             io.emit('chat message', msg);
         });
+    });
+
+    http.listen(3000, () => {
+        console.log('listening on *:' + 3000);
     });
 };

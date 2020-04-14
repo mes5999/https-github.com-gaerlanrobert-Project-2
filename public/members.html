@@ -38,9 +38,10 @@
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   $(function () {
-    var socket = io();
+    let socket = io();
     $("form").submit(function () {
       socket.emit("chat message", $("#m").val());
+      debugger
       $("#m").val("");
       return false;
     });
@@ -53,6 +54,6 @@
 
 <script src="./js/login.js"></script>
 <script src="./js/app.js"></script>
-<script src="./main.js"></script>
+<!--<script src="./main.js"></script>-->
 </body>
 </html>
