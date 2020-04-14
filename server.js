@@ -41,4 +41,8 @@ db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
     });
+
+    http.listen(3000, () => {
+        console.log('listening on *:' + 3000);
+    });
 });
