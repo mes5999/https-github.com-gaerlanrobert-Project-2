@@ -8,7 +8,7 @@ const exphbs = require('express-handlebars');
 const passport = require('./config/passport');
 // Setting up port and requiring models for syncing
 // eslint-disable-next-line no-undef
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 // eslint-disable-next-line no-undef
 const db = require('./models');
 
