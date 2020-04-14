@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // Pass a http.Server instance to the listen method
 const io = require('socket.io').listen(server);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
