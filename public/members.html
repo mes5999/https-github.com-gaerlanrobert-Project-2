@@ -91,21 +91,12 @@
 
       const div = $("#articles");
       div.empty();
-
+      console.clear();
       if (data) {
         for (const article of data) {
-          console.log(`article.title: ${article.title}`);
-          console.log(`article.source: ${article.source}`);
-          console.log(`article.url: ${article.url}`);
-
+          console.log(`article.title: ${article.title} - article.source: ${article.source}`)
           div.append(`<p>${article.title} - <a href="${article.source}" target="_blank">${article.source.name}</a></p>`);
 
-          // array.push({
-          //   title: article.title.split('-')[0],
-          //   source: article.source.name,
-          //   url: article.url,
-          //   urlToImage: article.urlToImage,
-          // });
         }
       }
     });
