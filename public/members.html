@@ -34,6 +34,8 @@
       </div>
     </div>
 
+
+
     <div class="row">
       <div class="card">
         <div class="card-body">
@@ -91,12 +93,12 @@
       div.empty();
 
       if (data) {
-        for (const article of data.splice(0, 5)) {
+        for (const article of data) {
           console.log(`article.title: ${article.title}`);
           console.log(`article.source: ${article.source}`);
           console.log(`article.url: ${article.url}`);
 
-          div.append(`<p>${article.title} </p>`);
+          div.append(`<p>${article.title} - <a href="${article.source}" target="_blank">${article.source.name}</a></p>`);
 
           // array.push({
           //   title: article.title.split('-')[0],
