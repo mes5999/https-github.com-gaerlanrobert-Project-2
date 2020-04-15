@@ -19,7 +19,7 @@
         <h6 class="two columns searchNews">Search News</h6>
         <input type="text" id="character-search" class="eight columns form-control">
         <button type="submit" class="btn btn-primary btn-md two columns" id="search-btn"><span>Search</span></button>
-     
+
     </div><br>
 
     <div class="row articles">
@@ -149,6 +149,14 @@
     str = str.replace(/\s+/g, "").toLowerCase();
     fetchNews(str)
   });
+
+  const searchInput = $("#character-search");
+  searchInput.onkeypress((event) => {
+      const keycode = (event.keyCode ? event.keyCode : event.which);
+      if (keycode === '13') {
+          fetchNews(searchInput.val());
+      }
+  })
 
   function fetchNews(str) {
     $.get(`api/news/${str}`, (data) => {
