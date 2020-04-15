@@ -15,10 +15,40 @@
 <!--  <img src="./images/chatterbox.jpg" alt="dots" />-->
 <!--</section>-->
 
-<section class="articleDisplay">
+<section class="article-container">
+
   <div>
-    <h1>Article will be displayed here</h1>
+
+    <div class="row">
+
+      <div>
+        <div class="card">
+          <div class="card-header">
+            <h6><strong>Search News</strong></h6>
+          </div>
+          <div class="card-body">
+            <input type="text" id="character-search" class="form-control">
+            <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span>Search</span></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            {{#each articles}}
+            {{> articles/article-block}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </section>
 
 <div id="chat-stuff">
@@ -39,11 +69,39 @@
   </form>
 </div>
 
-
-
-
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script type="text/javascript">
+  fetchNews('coronavirus');
+
+  $("#search-btn").on("click", () => {
+    let str = $("#character-search").val().trim();
+    str = str.replace(/\s+/g, "").toLowerCase();
+    fetchNews(str)
+  });
+
+  function fetchNews(str) {
+    $.get(`api/news/${str}`, (data) => {
+      console.log(data);
+      if (data) {
+        for (const article of data.splice(0, 5)) {
+          console.log(`article.title: ${article.title}`);
+          console.log(`article.source: ${article.source}`);
+          console.log(`article.url: ${article.url}`);
+
+          // array.push({
+          //   title: article.title.split('-')[0],
+          //   source: article.source.name,
+          //   url: article.url,
+          //   urlToImage: article.urlToImage,
+          // });
+        }
+      }
+    });
+  }
+</script>
+
 <script>
   $(function () {
     var socket = io();
