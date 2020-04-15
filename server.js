@@ -1,8 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
-const path = require('path');
 const http = require('http');
 const express = require('express');
-
 const app = express();
 
 const server = http.createServer(app);
