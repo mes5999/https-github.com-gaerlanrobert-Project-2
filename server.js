@@ -15,8 +15,7 @@ const PORT = process.env.PORT || 80;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-// Expose the node_modules folder as static resource
-// (to access socket.io.js in the browser) - THIS!!!
+// Expose the node_modules folder as static resource (to access socket.io.js in the browser) - THIS!!!
 app.use('/static', express.static('node_modules'));
 
 // Requiring our routes
