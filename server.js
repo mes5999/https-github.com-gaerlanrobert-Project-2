@@ -20,20 +20,9 @@ app.use('/static', express.static('node_modules'));
 
 // Requiring our routes
 require('./routes/html-routes')(app);
+require('./routes/io-routes')(io);
 
 server.listen(PORT, () => {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
 });
 
-
-
-// Register the index route of your app that returns the HTML file
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, './public/members.html'));
-// });
-
-io.on('connection', (socket) => {
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
-    });
-});
