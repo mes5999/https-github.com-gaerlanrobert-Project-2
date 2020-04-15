@@ -39,6 +39,7 @@ body{
     margin-right:2%;
     background-color:yellow;
     border:5px solid black;
+    height:40px;
 }
 
 .chat{
@@ -78,7 +79,9 @@ body{
 width:30%;
 height:30px;
 float: right;
+margin-bottom:0px;
 }.chatFormInput{
     width:69%;
     height:25px;
+    margin-bottom:0px;
 }
