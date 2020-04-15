@@ -1,18 +1,26 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="newstyle.css" />
-  <link rel="stylesheet" href="./stylesheets/skeleton.css" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css"/> -->
-  <title>CHATTERBOX</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="newstyle.css" />
+    <link rel="stylesheet" href="./stylesheets/skeleton.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css"/> -->
+    <title>CHATTERBOX</title>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <div class="row landing">
         <img src="./images/chatterbox.jpg" alt="dots" class="center"/>
+    </div>
+
+    <div id="username-container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h6>Welcome <span class="member-name"></span></h6>
+            </div>
+        </div>
     </div>
 
     <div class="searchBar row">
@@ -34,13 +42,13 @@
         </div>
         <div class="ten columns articles_display">
             <div class="card">
-              <div class="card-body">
-                <div class="text-center" id="articles">
+                <div class="card-body">
+                    <div class="text-center" id="articles">
 
-                    <p cass="articles_rendered">CHOSEN ARTICLE TO RENDER</p>
+                        <p cass="articles_rendered">CHOSEN ARTICLE TO RENDER</p>
 
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </div><br>
@@ -49,17 +57,17 @@
         <div class="eight columns chatBox">
 
 
-<div id="chat-container">
+            <div id="chat-container">
 
-            CHAT BOX
+                CHAT BOX
 
-            <ul id="messages">
-                <li></li>
-            </ul>
-            <form class="chatForm" action="">
-              <input class="chatFormInput" id="m" autocomplete="off"/><button class="chatFormButton">Send</button>
-            </form>
-</div>
+                <ul id="messages">
+                    <li></li>
+                </ul>
+                <form class="chatForm" action="">
+                    <input class="chatFormInput" id="m" autocomplete="off"/><button class="chatFormButton">Send</button>
+                </form>
+            </div>
         </div>
         <div class="four columns whosOnline">
             <P class="peopleOnlineTitle">PEOPLE ONLINE</P>
@@ -141,54 +149,56 @@
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 
+<script src="js/members.js"></script>
+
 <script type="text/javascript">
-  fetchNews('coronavirus');
+	fetchNews('coronavirus');
 
-  $("#search-btn").on("click", () => {
-    let str = $("#character-search").val().trim();
-    str = str.replace(/\s+/g, "").toLowerCase();
-    fetchNews(str)
-  });
+	$("#search-btn").on("click", () => {
+		let str = $("#character-search").val().trim();
+		str = str.replace(/\s+/g, "").toLowerCase();
+		fetchNews(str)
+	});
 
-  const searchInput = $("#character-search");
-  searchInput.onkeypress((event) => {
-      const keycode = (event.keyCode ? event.keyCode : event.which);
-      if (keycode === '13') {
-          fetchNews(searchInput.val());
-      }
-  })
+	const searchInput = $("#character-search");
+	searchInput.onkeypress((event) => {
+		const keycode = (event.keyCode ? event.keyCode : event.which);
+		if (keycode === '13') {
+			fetchNews(searchInput.val());
+		}
+	})
 
-  function fetchNews(str) {
-    $.get(`api/news/${str}`, (data) => {
-      console.log(data);
+	function fetchNews(str) {
+		$.get(`api/news/${str}`, (data) => {
+			console.log(data);
 
-      const div = $("#articles");
-      div.empty();
-      console.clear();
-      if (data) {
-        for (const article of data) {
-          console.log(`article.title: ${article.title} - article.source: ${article.source}`)
-          div.append(`<p>${article.title} - <a href="${article.url}" target="_blank">${article.source.name}</a></p>`);
+			const div = $("#articles");
+			div.empty();
+			console.clear();
+			if (data) {
+				for (const article of data) {
+					console.log(`article.title: ${article.title} - article.source: ${article.source}`)
+					div.append(`<p>${article.title} - <a href="${article.url}" target="_blank">${article.source.name}</a></p>`);
 
-        }
-      }
-    });
-  }
+				}
+			}
+		});
+	}
 </script>
 
 <script>
-  $(function () {
-    var socket = io();
-    $('form').submit(function(){
-      socket.emit('chat message', $('#m').val());
-      $('#m').val('');
-      return false;
-    });
-    socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
-      window.scrollTo(0, document.body.scrollHeight);
-    });
-  });
+	$(function () {
+		var socket = io();
+		$('form').submit(function(){
+			socket.emit('chat message', $('#m').val());
+			$('#m').val('');
+			return false;
+		});
+		socket.on('chat message', function(msg){
+			$('#messages').append($('<li>').text(msg));
+			window.scrollTo(0, document.body.scrollHeight);
+		});
+	});
 </script>
 </body>
 </html>
