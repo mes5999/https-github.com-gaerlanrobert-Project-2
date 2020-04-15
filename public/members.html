@@ -95,7 +95,7 @@
       if (data) {
         for (const article of data) {
           console.log(`article.title: ${article.title} - article.source: ${article.source}`)
-          div.append(`<p>${article.title} - <a href="${article.source}" target="_blank">${article.source.name}</a></p>`);
+          div.append(`<p>${article.title} - <a href="${article.url}" target="_blank">${article.source.name}</a></p>`);
 
         }
       }
