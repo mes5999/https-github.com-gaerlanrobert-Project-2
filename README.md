@@ -1,4 +1,4 @@
-# Project 2: Chat & current events app
+# Project 2: Chatterbox app
 #### Team Members:
   * Kaden
   * Aleksei
