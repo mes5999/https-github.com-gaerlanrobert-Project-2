@@ -18,6 +18,7 @@ app.use('/static', express.static('node_modules'));
 
 // Requiring our routes
 require('./routes/html-routes')(app);
+require('./routes/news-routes')(app);
 require('./routes/io-routes')(io);
 
 server.listen(PORT, () => {
