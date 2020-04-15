@@ -9,6 +9,7 @@ module.exports = {
         const url = `http://newsapi.org/v2/top-headlines?apiKey=${apiKey}&country=${country}&q=${topic}&sortBy=popularity&from=${from}`;
         const response = await fetch(url);
         const { articles } = await response.json();
+        console.log(articles);
         return articles;
     },
 };

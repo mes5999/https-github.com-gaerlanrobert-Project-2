@@ -5,6 +5,8 @@
   "dependencies": {
     "engine": "^1.0.0",
     "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "node-fetch": "^2.6.0",
