@@ -1,0 +1,84 @@
+body{
+
+
+    background-color:salmon;
+}
+
+.container{
+    background-color:white;
+    padding-bottom:5%;
+}
+
+.center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:25%
+}
+
+.searchNews{
+    font-size:20px;
+}
+
+.articles{
+    margin-left:2%;
+    margin-right:2%;
+}
+.articles_display{
+    background-color:green;
+    border:5px solid black;
+}
+
+.articles_found{
+    background-color:goldenrod;
+    border:5px solid black;
+}
+
+.searchBar{
+    margin-left:2%;
+    margin-right:2%;
+    background-color:yellow;
+    border:5px solid black;
+}
+
+.chat{
+    margin-left:2%;
+    margin-right:2%;
+}
+.chatBox{
+    background-color:pink;
+    border:5px solid black;
+}
+
+.whosOnline{
+    height: 250px;
+    background-color:violet;
+    border:5px solid black;
+}
+.footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    text-align:center;
+
+    
+    background-color:blue;
+}
+
+.chatForm{
+    border-top: 5px solid black;
+    background-color:firebrick;
+    float:bottom;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    margin-bottom:0px;
+}.chatFormButton{
+width:30%;
+height:30px;
+float: right;
+}.chatFormInput{
+    width:69%;
+    height:25px;
+}
