@@ -6,6 +6,6 @@ $(document).ready(() => {
 
     $.get('/api/user_data').then((data) => {
         localStorage.setItem('username', capitalize(data.email.split('@').shift()));
-        $('.member-name').text(localStorage.getItem('username'));
+        $('.member-name').text(`${localStorage.getItem('username')}!`);
     });
 });
