@@ -1,11 +1,11 @@
 body{
 
 
-    background-color:salmon;
+    background-color: cadetblue;
 }
 
 .landing{
-    background-color:steelblue;
+    background-color: beige;
     border:5px solid black;
     margin-left:2%;
     margin-right:2%;
@@ -13,7 +13,7 @@ body{
     text-align:center;
 }.welcome{
     text-align:center;
-    color:green;
+    color: #333333;
 }
 
 .container{
@@ -37,7 +37,7 @@ body{
     margin-right:2%;
 }
 .articles_display{
-    background-color:green;
+    background-color: lightgray;
     border:5px solid black;
 }
 
@@ -49,7 +49,7 @@ body{
 .searchBar{
     margin-left:2%;
     margin-right:2%;
-    background-color:yellow;
+    background-color: seagreen;
     border:5px solid black;
     height:40px;
 }
@@ -59,7 +59,7 @@ body{
     margin-right:2%;
 }
 .chatBox{
-    background-color:pink;
+    background-color: lightgray;
     border:5px solid black;
 }
 
