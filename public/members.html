@@ -27,7 +27,7 @@
 
 
     <div class="searchBar row">
-        <h6 class="two columns searchNews">Search News</h6>
+        <h6 class="two columns searchNews">News Search</h6>
         <input type="text" id="character-search" class="eight columns form-control">
         <button type="submit" class="btn btn-primary btn-md two columns" id="search-btn"><span>Search</span></button>
 
@@ -105,7 +105,7 @@
         <div class="card">
           <div class="card-header">
             <img src="./images/chatterbox.jpg" alt="dots" />
-            <h6><strong>Search News</strong></h6>
+            <h6><strong>News Search</strong></h6>
           </div>
           <div class="card-body">
             <input type="text" id="character-search" class="form-control">
@@ -201,7 +201,7 @@
 			return false;
 		});
 		socket.on('chat message', function(msg){
-			$('#messages').append($('<span>').text(`message| ${msg}`));
+			$('#messages').append($('<span>').text(`${msg}`));
 			$('#messages').append($('<br>'));
 			window.scrollTo(0, document.body.scrollHeight);
 		});
