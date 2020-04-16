@@ -4,6 +4,18 @@ body{
     background-color:salmon;
 }
 
+.landing{
+    background-color:steelblue;
+    border:5px solid black;
+    margin-left:2%;
+    margin-right:2%;
+}.slogan{
+    text-align:center;
+}.welcome{
+    text-align:center;
+    color:green;
+}
+
 .container{
     background-color:white;
     padding-bottom:5%;
