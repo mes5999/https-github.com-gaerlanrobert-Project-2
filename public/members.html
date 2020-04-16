@@ -66,11 +66,10 @@
 
                 CHAT BOX
 
-                <ul id="messages">
-                    <li></li>
-                </ul>
+                <div id="messages">
+                </div>
                 <form class="chatForm" action="">
-                    <input class="chatFormInput" id="m" autocomplete="off"/><button class="chatFormButton">Send</button>
+                    <input class="chatFormInput" id="m" autocomplete="off"/>
                 </form>
             </div>
         </div>
@@ -202,7 +201,8 @@
 			return false;
 		});
 		socket.on('chat message', function(msg){
-			$('#messages').append($('<li>').text(msg));
+			$('#messages').append($('<span>').text(`message| ${msg}`));
+			$('#messages').append($('<br>'));
 			window.scrollTo(0, document.body.scrollHeight);
 		});
 	});

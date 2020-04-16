@@ -75,7 +75,7 @@ body{
     width:100%;
     text-align:center;
 
-    
+
     background-color:blue;
 }
 
@@ -93,7 +93,7 @@ height:30px;
 float: right;
 margin-bottom:0px;
 }.chatFormInput{
-    width:69%;
+    width:99%;
     height:25px;
     margin-bottom:0px;
 }
